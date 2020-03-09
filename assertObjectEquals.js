@@ -1,4 +1,4 @@
-const eqObjects = function(object1, object2) {
+const assertObjectEquals = function(object1, object2) {
   const keyarray1 = Object.keys(object1);
   const keyarray2 = Object.keys(object2);
   if (keyarray1.length !== keyarray2.length) {
@@ -20,13 +20,4 @@ const eqObjects = function(object1, object2) {
   return true;
 };
 
-
-const assertObjectsEqual = function(object1, object2) {
-  const inspect = require('util').inspect;
-  if (eqObjects(object1, object2)) {
-    console.log(`Assertion Passed! ✅✅✅ ${inspect(object1)} === ${inspect(object2)}`)
-  }
-  else {
-    console.log(`Assertion Failed! 🛑🛑🛑 ${inspect(object1)} !== ${inspect(object2)}`)
-  }
-};
+module.exports = assertObjectEquals;

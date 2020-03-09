@@ -1,4 +1,5 @@
-let head = function(array) {
-return array.slice(0, 1);
+const head = function(array) {
+return array[0];
 };
 
+module.exports = head;
